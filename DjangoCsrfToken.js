@@ -2,8 +2,7 @@
 var CsrfToken = function() {
     this.evaluate = function(context) {
         var request = context.getCurrentRequest(),
-            headers = request.getHeaders(),
-            cookies = headers['Cookie'].split(';'),
+            cookies = request.getHeaderByName('Cookie').split(';'),
             token = null;
 
         for (var index in cookies) {
