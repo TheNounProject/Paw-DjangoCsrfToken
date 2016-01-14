@@ -6,8 +6,9 @@ var CsrfToken = function() {
             token = null;
 
         for (var index in cookies) {
-            if (cookies[index].indexOf('csrftoken') == 0) {
-                token = cookies[index].split('=')[1]
+            var cookie = cookies[index].trim();
+            if (cookie.indexOf('csrftoken') == 0) {
+                token = cookie.split('=')[1];
             }
         }
 
